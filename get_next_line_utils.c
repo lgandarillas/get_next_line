@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 20:21:07 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/04 16:31:52 by lgandari         ###   ########.fr       */
+/*   Updated: 2023/11/06 01:07:16 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ size_t	ft_strlen(const char *s)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		l1;
-	int		l2;
-	int		i;
+	size_t	l1;
+	size_t	l2;
+	size_t	i;
 	char	*str;
 
 	l1 = ft_strlen(s1);
@@ -69,7 +69,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 char	*ft_strdup(const char *s)
 {
 	char	*dest;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	i = ft_strlen(s);

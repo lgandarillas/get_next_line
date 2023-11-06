@@ -6,7 +6,7 @@
 /*   By: lganda <lgandari@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:08:25 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/05 00:31:48 by lgandari         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:24:20 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ static char	*get_line(char **stash)
 {
 	char	*result;
 	char	*old;
-	int		len;
-	int		i;
+	size_t	len;
+	size_t	i;
 
 	if (**stash == 0)
 		return (NULL);

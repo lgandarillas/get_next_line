@@ -6,7 +6,7 @@
 /*   By: lgandari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:54:33 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/04 23:54:14 by lgandari         ###   ########.fr       */
+/*   Updated: 2023/11/05 09:43:52 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include <fcntl.h>
 
 const char *files[] = {
-"files/1_One_line.txt",
-"files/2Lines with jumps.txt",
-"files/3Lines with jumps too.txt",
-"files/4empty.txt",
-"files/5Jumps.txt",
-"files/TheLordOfTheRings.txt",
-"files/el_quijote.txt",
+"files/0_One_line.txt",
+"files/1Lines_jumps.txt",
+"files/2Lines_jumps.txt",
+"files/3empty.txt",
+"files/4Jumps.txt",
+"files/5TheLordOfTheRings.txt",
+"files/6el_quijote.txt",
 NULL
 };
-
+/*
 int	main(void)
 {
 	char	*line;
@@ -45,30 +45,16 @@ int	main(void)
 	}
 	return (0);
 }
-
-/*
+*/
+//PROBAR INDIVIDUALMENTE
 int	main(void)
 {
 	char	*line;
-	int		fd;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	line = NULL;
-	while (files[j] != NULL)
-	{
-		fd = open(files[j], O_RDONLY);
-		while ((line = get_next_line(fd)))
-		{
-			printf("%s\n", line);
-			i++;
-		}
-		j++;
-	}
+	int	fd;
+	
+	fd = open(files[6], O_RDONLY);
+	while ((line = get_next_line(fd)))
+		printf("%s", line);
 	close(fd);
-	system("leaks a.out");
 	return (0);
 }
-*/
