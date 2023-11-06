@@ -6,7 +6,7 @@
 /*   By: lganda <lgandari@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:08:25 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/06 17:24:29 by lgandari         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:56:17 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	read_content(int fd, char **stash)
 	char	*old;
 	int		rd;
 
-	buffer[BUFFER_SIZE] = 0;
+	buffer[0] = 0;
 	rd = 1;
 	while (rd > 0 && ft_strchr(buffer, '\n') == NULL)
 	{
