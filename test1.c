@@ -6,7 +6,7 @@
 /*   By: lgandari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:54:33 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/05 09:43:52 by lgandari         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:26:59 by lganda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ const char *files[] = {
 "files/6el_quijote.txt",
 NULL
 };
-/*
+
+// Prueba conjunta
 int	main(void)
 {
 	char	*line;
@@ -45,8 +46,9 @@ int	main(void)
 	}
 	return (0);
 }
-*/
-//PROBAR INDIVIDUALMENTE
+
+// Pruebas individuales
+/*
 int	main(void)
 {
 	char	*line;
@@ -58,3 +60,4 @@ int	main(void)
 	close(fd);
 	return (0);
 }
+*/
