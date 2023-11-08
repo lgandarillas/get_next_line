@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgandari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:54:33 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/07 14:26:59 by lganda           ###   ########.fr       */
+/*   Updated: 2023/11/07 14:40:08 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ const char *files[] = {
 "files/0_One_line.txt",
 "files/1Lines_jumps.txt",
 "files/2Lines_jumps.txt",
-"files/3empty.txt",
+//"files/3empty.txt",
 "files/4Jumps.txt",
 "files/5TheLordOfTheRings.txt",
 "files/6el_quijote.txt",
@@ -36,13 +36,16 @@ int	main(void)
 	i = 0;
 	while (files[i] != NULL)
 	{
-		fd = open(files[i], O_RDONLY);
-		while ((line = get_next_line(fd)))
+		if (i != 3)
 		{
-			printf("%s\n", line);
-			i++;
-		}
-		close(fd);
+			fd = open(files[i], O_RDONLY);
+			while ((line = get_next_line(fd)))
+			{
+				printf("%s\n", line);
+				i++;
+			}
+			close(fd);
+			}
 	}
 	return (0);
 }
