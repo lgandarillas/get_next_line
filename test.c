@@ -6,7 +6,7 @@
 /*   By: lgandari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:54:33 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/10 14:42:21 by lgandari         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:25:38 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_atoi(const char *nptr)
 	return (res * sign);
 }
 
-// Prueba individual
+// Prueba con un fd
 void	test1(int test)
 {
 	char	*line;
@@ -62,11 +62,25 @@ void	test1(int test)
 		printf("%s", line);
 }
 
+// Prueba por stdin
+void	test2(void)
+{
+	char	*line;
+	int	fd;
+
+	fd = 0;
+	while ((line = get_next_line(fd)))
+		printf("%s", line);
+}
+
 // Programa principal
 int	main(int argc, char **argv)
 {
-	if (argc < 2)
+	if (argc < 1)
 		return (0);
-	test1(ft_atoi(argv[1]));
+	else if (argc == 1)
+		test2();
+	else
+		test1(ft_atoi(argv[1]));
 	return (0);
 }
