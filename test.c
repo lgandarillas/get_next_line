@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test1.c                                            :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgandari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:54:33 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/07 14:40:08 by lgandari         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:42:21 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,49 +18,55 @@ const char *files[] = {
 "files/0_One_line.txt",
 "files/1Lines_jumps.txt",
 "files/2Lines_jumps.txt",
-//"files/3empty.txt",
+"files/3empty.txt",
 "files/4Jumps.txt",
 "files/5TheLordOfTheRings.txt",
 "files/6el_quijote.txt",
 NULL
 };
 
-// Prueba conjunta
-int	main(void)
+int	ft_atoi(const char *nptr)
 {
-	char	*line;
-	int		fd;
-	int		i;
+	int	res;
+	int	sign;
 
-	line = NULL;
-	i = 0;
-	while (files[i] != NULL)
+	res = 0;
+	sign = 1;
+	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '+')
+		nptr++;
+	else if (*nptr == '-')
 	{
-		if (i != 3)
-		{
-			fd = open(files[i], O_RDONLY);
-			while ((line = get_next_line(fd)))
-			{
-				printf("%s\n", line);
-				i++;
-			}
-			close(fd);
-			}
+		sign = -1;
+		nptr++;
 	}
-	return (0);
+	if (*nptr == '+' || *nptr == '-')
+		return (0);
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		res = res * 10 + *nptr - '0';
+		nptr++;
+	}
+	return (res * sign);
 }
 
-// Pruebas individuales
-/*
-int	main(void)
+// Prueba individual
+void	test1(int test)
 {
 	char	*line;
 	int	fd;
-	
-	fd = open(files[6], O_RDONLY);
+
+	fd = open(files[test], O_RDONLY);
 	while ((line = get_next_line(fd)))
 		printf("%s", line);
-	close(fd);
+}
+
+// Programa principal
+int	main(int argc, char **argv)
+{
+	if (argc < 2)
+		return (0);
+	test1(ft_atoi(argv[1]));
 	return (0);
 }
-*/
