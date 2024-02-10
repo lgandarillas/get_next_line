@@ -6,7 +6,7 @@
 /*   By: lgandari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:54:33 by lgandari          #+#    #+#             */
-/*   Updated: 2023/11/10 15:25:38 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:08:27 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	test2(void)
 // Programa principal
 int	main(int argc, char **argv)
 {
-	if (argc < 1)
+	if (argc < 2)
 		return (0);
 	else if (argc == 1)
 		test2();
