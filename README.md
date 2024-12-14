@@ -1,4 +1,4 @@
-# get_next_line
+# [get_next_line | 42 School - Rank 01]
 - [get_next_line | 42 School] A utility for reading and processing input from a file or stream, one line at a time.
 - [Rank 01] 42 Common Core
 ## Description
